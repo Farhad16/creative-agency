@@ -1,0 +1,16 @@
+.fontBold{
+    font-weight: 900;
+}
+
+.text-brand{
+    background: #111430;
+    border: none;
+    padding: 8px 50px;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  
+  .text-brand:hover{
+    color: rgb(146, 18, 135);
+  }
