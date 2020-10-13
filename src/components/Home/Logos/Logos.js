@@ -5,27 +5,19 @@ import uber from '../../images/logos/uber.png';
 import netflix from '../../images/logos/netflix.png';
 import airbnb from '../../images/logos/airbnb.png';
 import './Logos.css';
+import Logo from '../Logo/Logo';
 
 
 const Logos = () => {
+    const allLogos = [slack, google, uber, netflix, airbnb];
     return (
         <section className="logo d-flex align-items-center justify-content-center my-5">
-            <div className="container row my-3">
-                <div className="col-md-2 p-2 offset-md-1">
-                    <img src={slack} alt="" />
+            <div className="container row my-5">
+                <div className="offset-md-1">
                 </div>
-                <div className="col-md-2 p-2">
-                    <img src={google} alt="" />
-                </div>
-                <div className="col-md-2 p-2">
-                    <img src={uber} alt="" />
-                </div>
-                <div className="col-md-2 p-2">
-                    <img src={netflix} alt="" />
-                </div>
-                <div className="col-md-2 p-2">
-                    <img src={airbnb} alt="" />
-                </div>
+                {
+                    allLogos.map((logo, i) => <Logo key={i} logo={logo}></Logo>)
+                }
             </div>
         </section>
     );
