@@ -15,6 +15,7 @@ import CustomerServiceList from './components/CustomerDashboard/CustomerServiceL
 import AdminControlServices from './components/AdminDashboard/AdminControlServices/AdminControlServices';
 import Dashboard from './components/Dashboard/Dashboard';
 import AddService from './components/AdminDashboard/AddService/AddService';
+import MakeAdmin from './components/AdminDashboard/MakeAdmin/MakeAdmin';
 
 
 
@@ -44,12 +45,14 @@ function App() {
           <CustomerServiceList></CustomerServiceList>
         </Route>
 
+        <Route path="/admin/controlService">
+          <AdminControlServices></AdminControlServices>
+        </Route>
         <Route path="/admin/addService">
           <AddService></AddService>
         </Route>
-
-        <Route path="/admin/controlService">
-          <AdminControlServices></AdminControlServices>
+        <Route path="/admin/makeAdmin">
+          <MakeAdmin></MakeAdmin>
         </Route>
       </Switch>
     </Router>

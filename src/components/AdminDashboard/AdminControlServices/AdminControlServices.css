@@ -1,6 +1,9 @@
 .bg-white{
     font-size: 14px;
     border-radius: 10px;
+}
+
+.overflow-auto{
     overflow-x:auto
 }
 

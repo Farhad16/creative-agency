@@ -45,7 +45,7 @@ const AdminControlServices = () => {
                     </nav>
 
                     <div className="customerList p-3">
-                        <div className="bg-white m-3 p-5">
+                        <div className="bg-white overflow-auto m-3 p-5">
                             <table className="table-style">
                                 <thead>
                                     <tr className="backColor">
