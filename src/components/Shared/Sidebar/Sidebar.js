@@ -30,7 +30,7 @@ const Sidebar = () => {
                         <img src={logo} alt="" width="150px" />
                     </Link>
                 </li>
-                {/* <li>
+                <li>
                     <Link to="/customer/order"
                         className={location.pathname === "/customer/order" ? "text-dark pl-3 active" : "text-dark pl-3"}
                     >
@@ -50,10 +50,10 @@ const Sidebar = () => {
                     >
                         <FontAwesomeIcon icon={faListAlt} /> <span>Review</span>
                     </Link>
-                </li> */}
+                </li>
                 {/* {isDoctor && <div> */}
 
-                <li>
+                {/* <li>
                     <Link to="/admin/controlService"
                         className={location.pathname === "/admin/controlService" ? "text-dark pl-3 active" : "text-dark pl-3"}
                     >
@@ -75,7 +75,7 @@ const Sidebar = () => {
                     >
                         <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
                     </Link>
-                </li>
+                </li> */}
             </ul>
         </aside>
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 
 import {
@@ -16,48 +16,56 @@ import AdminControlServices from './components/AdminDashboard/AdminControlServic
 import Dashboard from './components/Dashboard/Dashboard';
 import AddService from './components/AdminDashboard/AddService/AddService';
 import MakeAdmin from './components/AdminDashboard/MakeAdmin/MakeAdmin';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import NotFound from './components/NotFound/NotFound';
+import Login from './components/Login/Login';
 
 
-
+export const UserContext = createContext()
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
 
   return (
-    <Router>
-      <Switch>
-        <Route exact path={["/home", "/"]}>
-          <Home></Home>
-        </Route>
-        <Route path="/login">
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <Switch>
+          <Route exact path={["/home", "/"]}>
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
 
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard></Dashboard>
-        </Route>
+          <PrivateRoute path="/customer/order">
+            <CustomerOrder />
+          </PrivateRoute>
+          <PrivateRoute path="/customer/review">
+            <CustomerReview />
+          </PrivateRoute>
+          <PrivateRoute path="/customer/service">
+            <CustomerServiceList />
+          </PrivateRoute>
 
-        <Route path="/customer/order">
-          <CustomerOrder></CustomerOrder>
-        </Route>
-        <Route path="/customer/review">
-          <CustomerReview></CustomerReview>
-        </Route>
-        <Route path="/customer/service">
-          <CustomerServiceList></CustomerServiceList>
-        </Route>
+          <PrivateRoute path="/admin/controlService">
+            <AdminControlServices />
+          </PrivateRoute>
+          <PrivateRoute path="/admin/addService">
+            <AddService></AddService>
+          </PrivateRoute>
+          <PrivateRoute path="/admin/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </PrivateRoute>
 
-        <Route path="/admin/controlService">
-          <AdminControlServices></AdminControlServices>
-        </Route>
-        <Route path="/admin/addService">
-          <AddService></AddService>
-        </Route>
-        <Route path="/admin/makeAdmin">
-          <MakeAdmin></MakeAdmin>
-        </Route>
-      </Switch>
-    </Router>
-
-
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

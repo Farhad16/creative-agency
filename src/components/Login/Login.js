@@ -3,8 +3,8 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import './Login.css'
-import logo from '../../images/logos/logo.png'
-import google from '../../assets/logos/google.png'
+import logo from '../images/logos/logo.png'
+import google from '../images/logos/googleLogo.png'
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App';
 
@@ -32,9 +32,9 @@ const Login = () => {
 
 
     return (
-        <div className="loginSection">
-            <div className="login row">
-                <Link to="/"><img src={logo} alt="" /></Link>
+        <div className="loginSection row">
+            <div className="login w-50 text-center">
+                <Link to="/"><img src={logo} alt="" width="150px" /></Link>
                 <div className="loginForm">
                     <div className="google">
                         <h5>Login With</h5>
