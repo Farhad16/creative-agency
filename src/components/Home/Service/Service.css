@@ -3,3 +3,7 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+a:hover{
+    text-decoration: none;
+}

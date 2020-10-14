@@ -1,0 +1,34 @@
+.order-form{
+    background-color: #F4F7FC;
+}
+
+.input-field{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+
+.project{
+    padding-bottom: 50px
+}
+
+@media screen and (max-width: 960px) {
+    .customerName{
+        display: none;
+    }
+    .orderTitle{
+        margin: 50px auto;
+        font-weight: bold;
+    }
+
+    ::placeholder{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 270px) {
+    .orderTitle{
+        padding-top: 30px;
+    }
+}
