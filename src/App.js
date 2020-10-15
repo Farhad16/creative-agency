@@ -10,15 +10,14 @@ import {
 import Home from './components/Home/Home/Home';
 import CustomerOrder from './components/CustomerDashboard/CustomerOrder/CustomerOrder';
 import CustomerReview from './components/CustomerDashboard/CustomerReview/CustomerReview';
-import DisplayServices from './components/CustomerDashboard/DisplayCustomeServices/DisplayCustomeServices';
 import CustomerServiceList from './components/CustomerDashboard/CustomerServiceList/CustomerServiceList';
 import AdminControlServices from './components/AdminDashboard/AdminControlServices/AdminControlServices';
-import Dashboard from './components/Dashboard/Dashboard';
 import AddService from './components/AdminDashboard/AddService/AddService';
 import MakeAdmin from './components/AdminDashboard/MakeAdmin/MakeAdmin';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login/Login';
+import Sidebar from './components/Shared/Sidebar/Sidebar';
 
 
 export const UserContext = createContext()
@@ -37,7 +36,7 @@ function App() {
             <Login />
           </Route>
           <PrivateRoute path="/dashboard">
-            <Dashboard />
+            <Sidebar />
           </PrivateRoute>
 
           <PrivateRoute path="/customer/order">

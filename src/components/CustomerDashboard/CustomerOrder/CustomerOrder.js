@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../../../App';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 import './CustomerOrder.css'
 
 
 const CustomerOrder = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     return (
         <div className="rightSide">
             <div className="row">
@@ -13,7 +16,7 @@ const CustomerOrder = () => {
                 <div className="col-md-9">
                     <nav className="navbar mr-auto d-flex justify-content-between">
                         <p className="orderTitle">Order</p>
-                        <p className="customerName">Customer Name</p>
+                        <p className="customerName">{loggedInUser.displayName}</p>
                     </nav>
                     <div className="order-form">
                         <div className="pb-5">

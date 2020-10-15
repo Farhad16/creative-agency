@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../../../App';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 import DisplayCustomerService from '../DisplayCustomerService/DisplayCustomerService';
 import './AdminControlServices.css';
 
 
 const AdminControlServices = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     const serviceList = [
         {
@@ -41,7 +43,7 @@ const AdminControlServices = () => {
                 <div className="col-md-9">
                     <nav className="navbar mr-auto d-flex justify-content-between">
                         <p className="orderTitle font-weight-bold">Service List</p>
-                        <p className="customerName">Customer Name</p>
+                        <p className="customerName">{loggedInUser.displayName}</p>
                     </nav>
 
                     <div className="customerList p-3">

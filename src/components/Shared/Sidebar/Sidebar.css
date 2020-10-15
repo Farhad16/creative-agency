@@ -30,3 +30,14 @@
         padding-bottom: 10px;
     }
 }
+
+
+@media screen and (max-width: 960px) {
+    .logout{
+        position: fixed;
+    }
+
+    .sidebar{
+        flex-direction: row;
+    }
+}

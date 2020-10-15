@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { UserContext } from '../../../App';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 
 const CustomerReview = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { handleSubmit, register, errors } = useForm();
 
     const onSubmit = (data, e) => {
@@ -29,7 +31,7 @@ const CustomerReview = () => {
                 <div className="col-md-9">
                     <nav className="navbar mr-auto d-flex justify-content-between">
                         <p className="orderTitle">Review</p>
-                        <p className="customerName">Customer Name</p>
+                        <p className="customerName">{loggedInUser.displayName}</p>
                     </nav>
                     <div className="order-form">
                         <div className="pb-5">

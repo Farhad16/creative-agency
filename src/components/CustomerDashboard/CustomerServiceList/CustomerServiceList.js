@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 
 import webDesign from '../../images/icons/webDesign.png'
 import webDevelopment from '../../images/icons/webDevelop.png'
 import graphics from '../../images/icons/graphics.png'
 import DisplayCustomeServices from '../DisplayCustomeServices/DisplayCustomeServices';
+import { UserContext } from '../../../App';
 
 
 const CustomerServiceList = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     const serviceData = [
         {
             name: 'Web & Mobile design',
@@ -37,7 +40,7 @@ const CustomerServiceList = () => {
                 <div className="col-md-10">
                     <nav className="navbar mr-auto d-flex justify-content-between">
                         <p className="orderTitle">Order List</p>
-                        <p className="customerName">Customer Name</p>
+                        <p className="customerName">{loggedInUser.displayName}</p>
                     </nav>
                     <div className="order-form">
                         <div className="pb-5">

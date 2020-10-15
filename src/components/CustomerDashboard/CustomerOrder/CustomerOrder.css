@@ -27,7 +27,7 @@
     }
 }
 
-@media screen and (max-width: 270px) {
+@media screen and (max-width: 360px) {
     .orderTitle{
         padding-top: 30px;
     }

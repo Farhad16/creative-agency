@@ -24,9 +24,19 @@ const Login = () => {
         firebase.auth().signInWithPopup(provider)
             .then(result => {
                 setLoggedInUser(result.user);
-                history.replace(from);
+                storeAuthToken();
             }).catch(error => {
                 console.log(error.message);
+            });
+    }
+
+    const storeAuthToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+            .then(function (idToken) {
+                sessionStorage.setItem('token', idToken);
+                history.replace(from);
+            }).catch(function (error) {
+                // Handle error
             });
     }
 
