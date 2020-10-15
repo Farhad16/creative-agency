@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import ClientFeedback from '../ClientFeedback/ClientFeedback';
+import CustomerFeedback from '../CustomerFeedback/CustomerFeedback';
 
 
-const ClientFeedbacks = () => {
+const CustomerFeedbacks = () => {
     const [feedbacks, setFeedbacks] = useState([]);
 
     useEffect(() => {
@@ -17,10 +17,10 @@ const ClientFeedbacks = () => {
             <div className="d-flex justify-content-center">
                 <div className="w-75 row my-5">
                     {
-                        feedbacks.length ? feedbacks.map((feedback, i) => <ClientFeedback key={i} feedback={feedback}></ClientFeedback>)
+                        feedbacks.length ? feedbacks.map((feedback, i) => <CustomerFeedback key={i} feedback={feedback}></CustomerFeedback>)
                             : <div className="col-md-12 d-flex justify-content-center">
-                                <div class="spinner-border" role="status">
-                                    <span class="sr-only">Loading...</span>
+                                <div className="spinner-border" role="status">
+                                    <span className="sr-only">Loading...</span>
                                 </div>
                             </div>
                     }
@@ -30,4 +30,4 @@ const ClientFeedbacks = () => {
     );
 };
 
-export default ClientFeedbacks;
+export default CustomerFeedbacks;

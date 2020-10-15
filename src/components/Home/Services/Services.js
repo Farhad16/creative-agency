@@ -19,8 +19,8 @@ const Services = () => {
                     {
                         services.length ? services.map((service, i) => <Service key={i} service={service}></Service>) :
                             <div className="col-md-12 d-flex justify-content-center">
-                                <div class="spinner-border" role="status">
-                                    <span class="sr-only">Loading...</span>
+                                <div className="spinner-border" role="status">
+                                    <span className="sr-only">Loading...</span>
                                 </div>
                             </div>
                     }

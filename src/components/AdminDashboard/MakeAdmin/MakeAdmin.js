@@ -1,7 +1,25 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 
 const MakeAdmin = () => {
+    const { handleSubmit, register, errors } = useForm();
+
+    const onSubmit = (data, e) => {
+
+        fetch('http://localhost:5000/makeAdmin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+
+        }).then(res => res.json())
+            .then(result => {
+                if (result) {
+                    alert("Admin added successfully");
+                    e.target.reset();
+                }
+            })
+    }
     return (
         <div className="rightSide">
             <div className="row">
@@ -18,10 +36,11 @@ const MakeAdmin = () => {
                         <div className="pb-5">
                             <div className="row p-5">
                                 <div className="col-md-10 text-white bg-white m-3 p-5">
-                                    <form action="">
+                                    <form action="" onSubmit={handleSubmit(onSubmit)}>
                                         <span className="text-dark">Email</span><br />
-                                        <input type="text" placeholder="@gmail.com" className="input-field titleInput pl-3 my-3" />
-                                        <button className="btn btn-success">Submit</button>
+                                        <input type="text" placeholder="@gmail.com" name="email" ref={register({ required: true })} className="input-field titleInput pl-3 my-3" />
+                                        {errors.email && <small className="text-danger">This field is required</small>}
+                                        <button className="btn btn-success" type="submit">Submit</button>
                                     </form>
                                 </div>
                             </div>

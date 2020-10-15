@@ -3,15 +3,18 @@ import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../App';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 
-const CustomerReview = () => {
+const CustomerGivesReview = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { handleSubmit, register, errors } = useForm();
 
+
     const onSubmit = (data, e) => {
+        const review = { ...data, img: loggedInUser.photoURL }
+
         fetch('http://localhost:5000/addFeedback', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
+            body: JSON.stringify(review)
 
         }).then(res => res.json())
             .then(result => {
@@ -56,4 +59,4 @@ const CustomerReview = () => {
     );
 };
 
-export default CustomerReview;
+export default CustomerGivesReview;

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './NavSection.css'
 import logo from '../../images/logos/logo.png'
+import { UserContext } from '../../../App';
 
 const NavSection = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     return (
         <div className="ml-5">
@@ -27,9 +29,18 @@ const NavSection = () => {
                         <li className="nav-item">
                             <Link className="nav-link mr-5" to="#">Contact Us</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link mr-5 " to="#">Login</Link>
-                        </li>
+                        {loggedInUser.displayName ?
+                            <li className="nav-item">
+                                <Link className="nav-link mr-5" to="#" onClick={() => { setLoggedInUser({}); sessionStorage.clear() }}>Logout</Link>
+                            </li>
+                            :
+
+                            <li className="nav-item">
+                                <Link className="nav-link mr-5 " to="/login">Login</Link>
+                            </li>
+
+
+                        }
                     </ul>
                 </div>
             </nav>

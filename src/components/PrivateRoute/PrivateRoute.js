@@ -16,6 +16,7 @@ const PrivateRoute = ({ children, ...rest }) => {
 
         loggedInUser.displayName = decodedToken.name;
         loggedInUser.email = decodedToken.email;
+        loggedInUser.photoURL = decodedToken.picture;
 
         const currentTime = new Date().getTime() / 1000;
 

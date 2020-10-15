@@ -5,11 +5,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import CustomerOrder from './components/CustomerDashboard/CustomerOrder/CustomerOrder';
-import CustomerReview from './components/CustomerDashboard/CustomerReview/CustomerReview';
 import CustomerServiceList from './components/CustomerDashboard/CustomerServiceList/CustomerServiceList';
 import AdminControlServices from './components/AdminDashboard/AdminControlServices/AdminControlServices';
 import AddService from './components/AdminDashboard/AddService/AddService';
@@ -18,6 +16,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login/Login';
 import Sidebar from './components/Shared/Sidebar/Sidebar';
+import CustomerGivesReview from './components/CustomerDashboard/CustomerGivesReview/CustomerGivesReview';
 
 
 export const UserContext = createContext()
@@ -43,7 +42,7 @@ function App() {
             <CustomerOrder />
           </PrivateRoute>
           <PrivateRoute path="/customer/review">
-            <CustomerReview />
+            <CustomerGivesReview />
           </PrivateRoute>
           <PrivateRoute path="/customer/service">
             <CustomerServiceList />

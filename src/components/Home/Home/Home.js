@@ -1,5 +1,5 @@
 import React from 'react';
-import ClientFeedbacks from '../ClientFeedbacks/ClientFeedbacks';
+import CustomerFeedbacks from '../CustomerFeedbacks/CustomerFeedbacks';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Logos from '../Logos/Logos';
@@ -16,7 +16,7 @@ const Home = () => {
             <Logos></Logos>
             <Services></Services>
             <OurWork></OurWork>
-            <ClientFeedbacks></ClientFeedbacks>
+            <CustomerFeedbacks></CustomerFeedbacks>
             <Footer></Footer>
         </div>
     );

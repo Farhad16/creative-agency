@@ -13,7 +13,8 @@ input[type="file"] {
     cursor: pointer;
     border-radius: 5px;
     background-color: #cdffe4;
-    border: 1px solid #00dd67
+    border: 1px solid #00dd67;
+    color: #000000;
 }
 
 .addServiceInput{

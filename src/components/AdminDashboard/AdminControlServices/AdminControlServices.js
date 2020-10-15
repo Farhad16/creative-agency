@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 import DisplayCustomerService from '../DisplayCustomerService/DisplayCustomerService';
@@ -7,32 +7,15 @@ import './AdminControlServices.css';
 
 const AdminControlServices = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [serviceList, setServiceList] = useState([])
+    const [email, setEmail] = useState(loggedInUser.email);
 
-    const serviceList = [
-        {
-            name: 'Web & Mobile design',
-            serviceName: 'Web design',
-            description: 'We craft stunning and amazing web UI, using a well drafted UX to fit your product  well drafted UX to fit your product',
-            email: 'fhossain@gmail.com',
-            status: 'Done'
-        },
+    useEffect(() => {
+        fetch(`http://localhost:5000/orders/${email}`)
+            .then(res => res.json())
+            .then(data => setServiceList(data));
+    }, [email])
 
-        {
-            name: 'Web & Mobile design',
-            serviceName: 'Web design',
-            description: 'We craft stunning and amazing web UI, using a well drafted UX to fit your product',
-            email: 'fhossain@gmail.com',
-            status: 'pending'
-        },
-
-        {
-            name: 'Web & Mobile design',
-            serviceName: 'Web design',
-            description: 'We craft stunning and amazing web UI, using a well drafted UX to fit your product',
-            email: 'fhossain@gmail.com',
-            status: 'Ongoing'
-        },
-    ];
 
     return (
         <div className="rightSide">
@@ -48,19 +31,26 @@ const AdminControlServices = () => {
 
                     <div className="customerList p-3">
                         <div className="bg-white overflow-auto m-3 p-5">
-                            <table className="table-style">
+                            <table className="table-style table table-borderless">
                                 <thead>
                                     <tr className="backColor">
-                                        <th>Name</th>
-                                        <th>Email ID</th>
-                                        <th>Service</th>
-                                        <th>Project Details</th>
-                                        <th className="pl-3">Status</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email ID</th>
+                                        <th scope="col">Service</th>
+                                        <th scope="col">Project Details</th>
+                                        <th scope="col" className="pl-3">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {
-                                        serviceList.map((service, i) => <DisplayCustomerService key={i} service={service} ></DisplayCustomerService>)
+                                        serviceList.length ? serviceList.map((service, i) => <DisplayCustomerService key={i} service={service} ></DisplayCustomerService>)
+                                            : <div className="col-md-12 d-flex justify-content-center">
+                                                <div className="mr-3">Loading...</div>
+                                                <span className="spinner-border" role="status">
+                                                    <span className="sr-only text-dark">Loading...</span>
+                                                </span>
+                                            </div>
+
                                     }
                                 </tbody>
                             </table>

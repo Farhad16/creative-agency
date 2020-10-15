@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 import './CustomerOrder.css'
@@ -6,6 +8,46 @@ import './CustomerOrder.css'
 
 const CustomerOrder = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const [order, setOrder] = useState({});
+    const [file, setFile] = useState(null);
+
+
+    const handleBlur = (e) => {
+        const newInfo = { ...order }
+        newInfo[e.target.name] = e.target.value;
+        setOrder(newInfo)
+    }
+
+    const handleFileChange = (e) => {
+        const newFile = e.target.files[0];
+        setFile(newFile)
+    }
+
+    const handleSubmit = (e) => {
+        const formData = new FormData()
+        formData.append('file', file);
+        formData.append('name', order.name);
+        formData.append('email', order.email);
+        formData.append('orderName', order.orderName);
+        formData.append('projectDetails', order.projectDetails);
+        formData.append('price', order.price);
+        formData.append('status', "Pending");
+
+        fetch('http://localhost:5000/addOrder', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    alert("Service added successfully")
+                }
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
 
     return (
         <div className="rightSide">
@@ -22,13 +64,21 @@ const CustomerOrder = () => {
                         <div className="pb-5">
                             <div className="row p-5">
                                 <div className="col-md-8 text-white">
-                                    <form action="">
-                                        <input type="text" placeholder="Your name / company's name" className="input-field pl-3 mb-3" /><br />
-                                        <input type="text" placeholder="Your email address" className="input-field pl-3 mb-3" /><br />
-                                        <input type="text" placeholder="order Name" className="input-field pl-3 mb-3" /><br />
-                                        <input type="text" placeholder="Project Details" className="input-field project pl-3 mb-3" /><br />
-                                        <input type="text" placeholder="Price" className="input-field pl-3 mb-3" />
-                                        <button className="btn text-brand mt-2">Send</button>
+                                    <form action="" onSubmit={handleSubmit}>
+                                        <input type="text" name="name" placeholder="Your name / company's name" onBlur={handleBlur} className="input-field pl-3 mb-3" required /><br />
+                                        <input type="text" name="email" placeholder="Your email address" onBlur={handleBlur} className="input-field pl-3 mb-3" required /><br />
+                                        <input type="text" name="orderName" placeholder="Order Name" onBlur={handleBlur} className="input-field pl-3 mb-3" required /><br />
+                                        <input type="text" name="projectDetails" placeholder="Project Details" onBlur={handleBlur} className="input-field project pl-3 mb-3" required /><br />
+                                        <p>
+                                            <input type="text" name="price" placeholder="Price" onBlur={handleBlur} className="price-field pl-3 mb-3" required />
+
+                                            <label htmlFor="file-upload" className="custom-file-upload px-5 ml-5 w-48 py-2">
+                                                <FontAwesomeIcon icon={faCloudUploadAlt} /> <span>Upload project file</span>
+                                            </label>
+                                            <input id="file-upload" name="image" type="file" onChange={handleFileChange} />
+
+                                        </p>
+                                        <button className="btn text-brand mt-2" type="submit">Send</button>
                                     </form>
                                 </div>
                             </div>

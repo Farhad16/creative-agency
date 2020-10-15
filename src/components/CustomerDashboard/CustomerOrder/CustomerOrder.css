@@ -32,3 +32,18 @@
         padding-top: 30px;
     }
 }
+
+@media screen and (max-width: 250px) {
+    .orderTitle{
+        padding-top: 50px;
+    }
+}
+
+
+.price-field{
+    padding: 10px;
+    width: 48%;
+    border-radius: 5px;
+    border: none;
+    margin-left: 5px;
+}

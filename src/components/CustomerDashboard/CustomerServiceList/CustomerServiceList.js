@@ -1,35 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 
-import webDesign from '../../images/icons/webDesign.png'
-import webDevelopment from '../../images/icons/webDevelop.png'
-import graphics from '../../images/icons/graphics.png'
 import DisplayCustomeServices from '../DisplayCustomeServices/DisplayCustomeServices';
 import { UserContext } from '../../../App';
 
 
 const CustomerServiceList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [serviceData, setServiceData] = useState([]);
 
-    const serviceData = [
-        {
-            name: 'Web & Mobile design',
-            description: 'We craft stunning and amazing web UI, using a well drafted UX to fit your product',
-            img: webDesign
-        },
-        {
-            name: 'Graphic design',
-            description: 'Amazing flyers social media post and brand representation that would make your brand stand out',
-            img: graphics
-        },
-        {
-            name: 'Web Development',
-            description: 'With well written codes, we build amazing apps for all platforms, mobile and web apps in general',
-            img: webDevelopment
-        }
-    ];
+    const [email, setEmail] = useState(loggedInUser.email);
 
-
+    useEffect(() => {
+        fetch(`http://localhost:5000/orders/${email}`)
+            .then(res => res.json())
+            .then(data => setServiceData(data));
+    }, [])
 
     return (
         <div className="rightSide">
@@ -46,9 +32,14 @@ const CustomerServiceList = () => {
                         <div className="pb-5">
                             <div className="row p-5">
                                 {
-                                    serviceData.map((service, i) => <DisplayCustomeServices key={i} service={service}></DisplayCustomeServices>)
+                                    serviceData.length ? serviceData.map((service, i) => <DisplayCustomeServices key={i} service={service}></DisplayCustomeServices>)
+                                        : <div className="col-md-12 d-flex justify-content-center">
+                                            <span className="mr-3">Loading...</span>
+                                            <div className="spinner-border" role="status">
+                                                <span className="sr-only text-dark">Loading...</span>
+                                            </div>
+                                        </div>
                                 }
-
                             </div>
                         </div>
                     </div>
