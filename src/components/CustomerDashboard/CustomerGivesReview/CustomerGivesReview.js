@@ -11,7 +11,7 @@ const CustomerGivesReview = () => {
     const onSubmit = (data, e) => {
         const review = { ...data, img: loggedInUser.photoURL }
 
-        fetch('http://localhost:5000/addFeedback', {
+        fetch('https://dry-bastion-62808.herokuapp.com/addFeedback', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(review)

@@ -13,7 +13,7 @@ const Service = ({ service }) => {
                         {
                             image ? <img className="rounded-circle img-style" src={`data:image/png;base64,${image.img}`} alt="" width="60px" height="60px" />
                                 :
-                                <img className="rounded-circle img-style" src={`http://localhost:5000/${img}`} alt="" width="60px" height="60px" />
+                                <img className="rounded-circle img-style" src={`https://dry-bastion-62808.herokuapp.com/${img}`} alt="" width="60px" height="60px" />
                         }
                     </div>
                     <div className="m-3 text-center">

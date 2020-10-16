@@ -26,7 +26,7 @@ const AddService = () => {
         formData.append('title', serviceInfo.title);
         formData.append('description', serviceInfo.description);
 
-        fetch('http://localhost:5000/addService', {
+        fetch('https://dry-bastion-62808.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })

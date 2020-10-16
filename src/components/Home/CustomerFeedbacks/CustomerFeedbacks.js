@@ -6,7 +6,7 @@ const CustomerFeedbacks = () => {
     const [feedbacks, setFeedbacks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/feedbacks')
+        fetch('https://dry-bastion-62808.herokuapp.com/feedbacks')
             .then(res => res.json())
             .then(data => setFeedbacks(data))
     }, []);

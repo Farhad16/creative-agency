@@ -34,7 +34,7 @@ const CustomerOrder = () => {
         formData.append('price', order.price);
         formData.append('status', "Pending");
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://dry-bastion-62808.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
         })

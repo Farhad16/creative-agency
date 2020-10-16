@@ -11,7 +11,7 @@ const AdminControlServices = () => {
     const [email, setEmail] = useState(loggedInUser.email);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${email}`)
+        fetch(`https://dry-bastion-62808.herokuapp.com/orders/${email}`)
             .then(res => res.json())
             .then(data => setServiceList(data));
     }, [email])

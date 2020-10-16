@@ -7,7 +7,7 @@ const DisplayCustomerService = ({ service, i }) => {
     const handleChangeStatus = (e, id) => {
         const status = { status: e.target.value }
 
-        fetch(`http://localhost:5000/updateStatus/${id}`, {
+        fetch(`https://dry-bastion-62808.herokuapp.com/updateStatus/${id}`, {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json"
