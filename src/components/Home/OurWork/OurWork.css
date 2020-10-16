@@ -6,3 +6,45 @@
 .carousel{
     height: 400px;
 }
+
+.cardStyle{
+    height: 400px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #ffffff;
+}
+
+@media screen and (max-width: 770px) {
+    .ourWork{
+        height: 450px;
+    }
+    
+    .carousel{
+        height: 200px;
+    }
+    
+    .cardStyle{
+        height: 200px;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 300px) {
+    .ourWork{
+        height: 400px;
+        width: 100%;
+    }
+    
+    .carousel{
+        height: 150px;
+    }
+    
+    .cardStyle{
+        height: 150px;
+        width: 100%;
+    }
+    
+}

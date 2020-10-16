@@ -17,7 +17,7 @@ const OurWork = () => {
         <section className="ourWork text-center my-5">
             <h2 className="font-weight-bold text-center py-5 text-white">Here are some of <span style={{ color: '#71d437' }}>our work</span></h2>
 
-            <div className="carousel container d-flex align-items-center">
+            <div className="carousel container d-flex align-items-center mb-3">
                 <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
                     {
                         items.map((item, i) => <OurWorkCarousel item={item} key={i} />)
