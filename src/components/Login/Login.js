@@ -9,7 +9,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App';
 
 
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
 
@@ -19,6 +19,10 @@ const Login = () => {
     let { from } = location.state || { from: { pathname: "/" } };
 
     const googleSignIn = () => {
+
+        if (firebase.apps.length === 0) {
+            firebase.initializeApp(firebaseConfig);
+        }
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
             .then(result => {
