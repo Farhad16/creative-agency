@@ -41,6 +41,10 @@ const NavSection = () => {
 
 
                         }
+
+                        <li className="nav-item">
+                            <Link className="nav-link mr-5 font-weight-bold" to="/accessAdmin">Admin</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>

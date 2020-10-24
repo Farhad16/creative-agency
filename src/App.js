@@ -17,6 +17,7 @@ import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login/Login';
 import Sidebar from './components/Shared/Sidebar/Sidebar';
 import CustomerGivesReview from './components/CustomerDashboard/CustomerGivesReview/CustomerGivesReview';
+import AccessPurposeAdmin from './components/AdminDashboard/AccessPurposeAdmin/AccessPurposeAdmin';
 
 
 export const UserContext = createContext()
@@ -58,6 +59,9 @@ function App() {
             <MakeAdmin></MakeAdmin>
           </PrivateRoute>
 
+          <Route path="/accessAdmin">
+            <AccessPurposeAdmin></AccessPurposeAdmin>
+          </Route>
           <Route path="*">
             <NotFound></NotFound>
           </Route>

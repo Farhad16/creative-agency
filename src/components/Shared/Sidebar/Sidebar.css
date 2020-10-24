@@ -1,5 +1,5 @@
 .sidebar{
-    position: fixed;
+    height: 90vh;
 }
 .sidebar li{
     margin-bottom: 1em;
@@ -23,21 +23,16 @@
        display: inline-block;
        margin: 0 auto;
     }
-}
-
-@media screen and (max-width: 200px) {
     .sidebar{
-        padding-bottom: 10px;
+        height: 10vh;
     }
 }
+
 
 
 @media screen and (max-width: 960px) {
-    .logout{
-        position: fixed;
-    }
-
     .sidebar{
         flex-direction: row;
     }
 }
+

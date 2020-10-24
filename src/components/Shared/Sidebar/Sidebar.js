@@ -26,7 +26,7 @@ const Sidebar = () => {
     }, [])
 
     return (
-        <aside className="sidebar d-flex flex-column justify-content-between py-2 px-4 pb-5" style={{ height: "100vh" }}>
+        <aside className="sidebar d-flex flex-column justify-content-between py-2 px-4">
             <ul className="list-unstyled">
                 <li>
                     <Link to="/home" className="text-dark sidebar-logo">
@@ -85,7 +85,7 @@ const Sidebar = () => {
                 }
             </ul>
             <div>
-                <Link to="/" className="logout pb-5" onClick={() => { setLoggedInUser({}); sessionStorage.clear() }}><FontAwesomeIcon icon={faSignOutAlt} /> <span className="logout-text">Logout</span></Link>
+                <Link to="/" className="logout ml-3" onClick={() => { setLoggedInUser({}); sessionStorage.clear() }}><FontAwesomeIcon icon={faSignOutAlt} /> <span className="logout-text">Logout</span></Link>
             </div>
         </aside>
     );

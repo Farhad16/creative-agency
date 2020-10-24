@@ -11,14 +11,18 @@ import Logo from '../Logo/Logo';
 const Logos = () => {
     const allLogos = [slack, google, uber, netflix, airbnb];
     return (
-        <section className="logo d-flex align-items-center justify-content-center my-5">
-            <div className="container row my-5">
+        <section className="logo my-5 justify-content-center">
+            <div className="d-flex justify-content-center">
                 <div className="offset-md-1">
+
                 </div>
-                {
-                    allLogos.map((logo, i) => <Logo key={i} logo={logo}></Logo>)
-                }
+                <div className="w-75 row mt-5">
+                    {
+                        allLogos.map((logo, i) => <Logo key={i} logo={logo}></Logo>)
+                    }
+                </div>
             </div>
+
         </section>
     );
 };

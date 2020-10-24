@@ -28,7 +28,7 @@ const MakeAdmin = () => {
                 </div>
                 <div className="col-md-7">
                     <nav className="navbar mr-auto d-flex justify-content-between">
-                        <p className="orderTitle font-weight-bold">Add Services</p>
+                        <p className="orderTitle font-weight-bold">Make Admin</p>
                         <p className="customerName">Customer Name</p>
                     </nav>
 

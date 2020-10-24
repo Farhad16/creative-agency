@@ -20,6 +20,7 @@
     .orderTitle{
         margin: 50px auto;
         font-weight: bold;
+        margin-top: 100px;
     }
 
     ::placeholder{
@@ -27,17 +28,14 @@
     }
 }
 
-@media screen and (max-width: 360px) {
-    .orderTitle{
-        padding-top: 30px;
-    }
+@media screen and (max-width: 250px) {
+   .orderTitle{
+       padding-top: 20px;
+       margin-bottom: 10px;
+       font-size: 14px;
+   }
 }
 
-@media screen and (max-width: 250px) {
-    .orderTitle{
-        padding-top: 50px;
-    }
-}
 
 
 .price-field{

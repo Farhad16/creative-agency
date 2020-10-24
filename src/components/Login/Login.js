@@ -42,8 +42,8 @@ const Login = () => {
 
     return (
         <div className="loginSection row">
-            <div className="login w-50 text-center">
-                <Link to="/"><img src={logo} alt="" width="150px" /></Link>
+            <div className="login text-center col-md-12">
+                <Link to="/"><img src={logo} alt="" /></Link>
                 <div className="loginForm">
                     <div className="google">
                         <h5>Login With</h5>
