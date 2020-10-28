@@ -35,10 +35,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
             <li>HTML</li>
             <li>CSS</li>
         </ul>
-        <h2>
-            Getting Started
-        </h2>
-       <a href="">https://creative-agency-pro.firebaseapp.com/</a>
+       <a href="https://creative-agency-pro.firebaseapp.com/">Live Link</a>
         <h2>
             Home page
         </h2>
