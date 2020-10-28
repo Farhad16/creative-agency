@@ -1,5 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
- <h2>Project Name: Creative Agency</h2>
+<body>
+    <h2>Project Name: Creative Agency</h2>
     <h3>Features</h3>
     <ul style="list-style-type: square;">
         <li> This is a single page web application.</li>
@@ -35,6 +36,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         <li>HTML</li>
         <li>CSS</li>
     </ul>
+</body>
 ### `npm start`
 
 Runs the app in the development mode.<br />
