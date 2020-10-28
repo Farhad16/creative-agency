@@ -38,19 +38,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         <h2>
             Getting Started
         </h2>
-        <p>
-            Open your command promt and run <small style="background-color: rgb(235, 233, 233);padding: 2px 5px">npx
-                create-react-app
-                creative-agency</small>
-        </p>
-        <p>
-            To change directory run <small style="background-color: rgb(235, 233, 233);padding: 2px 5px">cd
-                creative-agency</small>
-        </p>
-        <p>
-            To start the server run <small style="background-color: rgb(235, 233, 233);padding: 2px 5px;">
-                npm start</small>
-        </p>
+       <p>Open your command pro and run npx create-react-app creative-agency</p>
+        <p>To change directory run cd creative-agency</p>
+        <p>To start the server run npm start</p>
+        <a href="https://iili.io/3wIymu.png">
+            <img src="https://iili.io/3wIymu.md.png" width="300px">
+        </a>
     </div>
 
 
