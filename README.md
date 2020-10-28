@@ -35,11 +35,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
             <li>HTML</li>
             <li>CSS</li>
         </ul>
+        <h2>
+            Getting Started
+        </h2>
+        <p>
+            Open your command promt and run <small style="background-color: rgb(235, 233, 233);padding: 2px 5px">npx
+                create-react-app
+                creative-agency</small>
+        </p>
+        <p>
+            To change directory run <small style="background-color: rgb(235, 233, 233);padding: 2px 5px">cd
+                creative-agency</small>
+        </p>
+        <p>
+            To start the server run <small style="background-color: rgb(235, 233, 233);padding: 2px 5px;">
+                npm start</small>
+        </p>
     </div>
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 
