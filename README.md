@@ -1,6 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-<body>
-    <h2>Project Name: Creative Agency</h2>
+  <h2>Project Name: Creative Agency</h2>
     <h3>Features</h3>
     <ul style="list-style-type: square;">
         <li> This is a single page web application.</li>
@@ -19,24 +18,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
             Customers can review the service they ordered.
         </li>
     </ul>
-
-    <h2>Technologies Used</h2>
-    <ul>
-        <li>React</li>
-        <li>react-router-dom</li>
-        <li>react-hooks</li>
-        <li>react-hooks-form</li>
-        <li>react-material-ui-carousel</li>
-        <li>Node</li>
-        <li>Express</li>
-        <li>Mongodb</li>
-        <li>jwt-token</li>
-        <li>Firebase</li>
-        <li>Bootstrap</li>
-        <li>HTML</li>
-        <li>CSS</li>
-    </ul>
-</body>
+    <div>
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>React</li>
+            <li>react-router-dom</li>
+            <li>react-hooks</li>
+            <li>react-hooks-form</li>
+            <li>react-material-ui-carousel</li>
+            <li>Node</li>
+            <li>Express</li>
+            <li>Mongodb</li>
+            <li>jwt-token</li>
+            <li>Firebase</li>
+            <li>Bootstrap</li>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </div>
 ### `npm start`
 
 Runs the app in the development mode.<br />
