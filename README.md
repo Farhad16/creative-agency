@@ -38,9 +38,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         <h2>
             Getting Started
         </h2>
-       <p>Open your command pro and run npx create-react-app creative-agency</p>
-        <p>To change directory run cd creative-agency</p>
-        <p>To start the server run npm start</p>
+       <a href="">https://creative-agency-pro.firebaseapp.com/</a>
+        <h2>
+            Home page
+        </h2>
         <a href="https://iili.io/3wIymu.png">
             <img src="https://iili.io/3wIymu.md.png" width="300px">
         </a>
